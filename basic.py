@@ -3,6 +3,22 @@ from enum import Enum, auto
 import pathlib
 import re
 from itertools import chain
+import time
+
+
+def timing(f):
+    def wrap(*args, **kwargs):
+        time1 = time.time()
+        ret = f(*args, **kwargs)
+        time2 = time.time()
+        print(
+            "{:s} function took {:.3f} ms".format(f.__name__, (time2 - time1) * 1000.0)
+        )
+
+        return ret
+
+    return wrap
+
 
 DocumentId = int
 Score = int
@@ -15,7 +31,7 @@ DocumentScores = Dict[DocumentId, Score]
 InvertedIndex = Dict[Term, TokenPositions]
 QueryResult = List[Tuple[DocumentId, Score]]
 
-document_path = pathlib.PosixPath("docs")
+document_path = pathlib.PosixPath("performance")
 
 documents = []
 names = {}
@@ -39,8 +55,8 @@ def tokenize(document: str) -> List[str]:
 
 tokenized_documents = [tokenize(document) for document in documents]
 
-for tokenized_document in tokenized_documents:
-    print(tokenized_document[:3], "...", tokenized_document[-3:])
+# for tokenized_document in tokenized_documents:
+#    print(tokenized_document[:3], "...", tokenized_document[-3:])
 
 # Index
 
@@ -75,6 +91,7 @@ MODES = {
 QUOTE = '"'
 
 
+@timing
 def query_index(inverted_index: InvertedIndex, query: Query) -> QueryResult:
     # STEP 1: Extract out all the
     query_expressions = re.findall(r"[\"\-\+]|[\w]+", query)
@@ -95,7 +112,6 @@ def query_index(inverted_index: InvertedIndex, query: Query) -> QueryResult:
 
     while pointer < len(query_expressions):
         query_expression = query_expressions[pointer]
-        # print("eval", pointer, query_expression, mode)
         if query_expression in MODES:
             mode = MODES[query_expression]
             pointer += 1
@@ -132,8 +148,6 @@ def query_index(inverted_index: InvertedIndex, query: Query) -> QueryResult:
 
             document_term_scores = term_scores(matches)
 
-            # print("matches", document_term_scores)
-
             pointer += end_index + 1
         else:
             term = query_expression.lower()
@@ -160,11 +174,6 @@ def query_index(inverted_index: InvertedIndex, query: Query) -> QueryResult:
             raise ValueError(f"unknown mode {mode}")
 
         pointer += 1
-        # print(document_scores)
-
-    # print("scores", document_scores)
-    # print("included", included_document_ids)
-    # print("excluded", excluded_document_ids)
 
     return list(
         sorted(
@@ -243,6 +252,21 @@ for query in queries:
             [
                 (document_id, names[document_id], score)
                 for document_id, score in query_index(inverted_index, query)
-            ]
+            ][:3]
         ),
     )
+
+
+@timing
+def iterate_documents():
+    a = ["just", "do"]
+    count = 0
+    for d in tokenized_documents:
+        for t in d:
+            for c in a:
+                if c == t:
+                    count += 1
+    return count
+
+
+print(iterate_documents())
