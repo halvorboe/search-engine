@@ -1,0 +1,12 @@
+/Users/halvorbo/Projects/search-engine/advanced/target/release/deps/half-f0343f22e7a12f6f.rmeta: /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/lib.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/bfloat.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/bfloat/convert.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/binary16.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/binary16/convert.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/slice.rs
+
+/Users/halvorbo/Projects/search-engine/advanced/target/release/deps/libhalf-f0343f22e7a12f6f.rlib: /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/lib.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/bfloat.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/bfloat/convert.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/binary16.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/binary16/convert.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/slice.rs
+
+/Users/halvorbo/Projects/search-engine/advanced/target/release/deps/half-f0343f22e7a12f6f.d: /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/lib.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/bfloat.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/bfloat/convert.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/binary16.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/binary16/convert.rs /Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/slice.rs
+
+/Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/lib.rs:
+/Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/bfloat.rs:
+/Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/bfloat/convert.rs:
+/Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/binary16.rs:
+/Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/binary16/convert.rs:
+/Users/halvorbo/.cargo/registry/src/github.com-1ecc6299db9ec823/half-1.7.1/src/slice.rs:
