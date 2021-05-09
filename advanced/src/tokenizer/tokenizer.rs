@@ -1,3 +1,0 @@
-trait Tokenizer {}
-
-struct TokenizationPipeline {}
